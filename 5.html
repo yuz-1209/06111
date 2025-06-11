@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>購物車總額顯示</title>
+  <style>
+    .product {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 6px 12px;
+      font-size: 16px;
+    }
+
+    #totalDisplay {
+      font-weight: bold;
+      font-size: 20px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="clearCart()">清空購物車</button>
+  <p id="totalDisplay">購物車總額：$0</p>
+
+  <div class="product">
+    <img src="1.jpg" alt="商品1">
+    <p>$100</p>
+    <button onclick="addToCart(100)">加入購物車</button>
+  </div>
+
+  <div class="product">
+    <img src="2.jpg" alt="商品2">
+    <p>$120</p>
+    <button onclick="addToCart(120)">加入購物車</button>
+  </div>
+
+  <script>
+    let cartTotal = 0;
+
+    function addToCart(price) {
+      cartTotal += price;
+      console.log("已加入商品 $" + price);
+      updateTotalDisplay();
+    }
+
+    function clearCart() {
+      cartTotal = 0;
+      console.log("購物車已清空");
+      updateTotalDisplay();
+    }
+
+    function updateTotalDisplay() {
+      document.getElementById("totalDisplay").textContent = "購物車總額：$" + cartTotal;
+    }
+  </script>
+      <div class="nav" id="navbar">
+        <a href="work.html">首頁</a>
+</body>
+</html>

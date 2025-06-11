@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav a:first-child {
+            background-color: #4CAF50;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .content {
+            margin: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav" id="navbar">
+        <a href="work.html">首頁</a>
+        <a href="8.html">學習過程</a>
+        <a href="4.html">學習成果</a>
+        <a href="9.html">學習心得</a>
+    </div>
+    <div class="content">
+        <!-- 主要內容區域 -->
+    </div>
+
+    <script>
+        // 取得目前的檔案名稱
+        const currentPage = window.location.pathname.split('/').pop();
+
+        // 如果不是首頁，加入返回首頁連結
+        if (currentPage !== 'work.html' && currentPage !== '' && currentPage !== '/') {
+            const nav = document.getElementById('navbar');
+            const returnHome = document.createElement('a');
+            returnHome.href = 'work.html';
+            returnHome.textContent = '返回首頁';
+            nav.appendChild(returnHome); // 加到導覽列最後一個
+        }
+    </script>
+    <div>5B3G0019李宇軒 這是我的期末報告</div>
+</body>
+</html>
