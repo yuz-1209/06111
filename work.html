@@ -48,20 +48,18 @@
         <a href="9.html">學習心得</a>
     </div>
     <div class="content">
-        <!-- 主要內容區域 -->
     </div>
 
     <script>
-        // 取得目前的檔案名稱
+        
         const currentPage = window.location.pathname.split('/').pop();
 
-        // 如果不是首頁，加入返回首頁連結
         if (currentPage !== 'work.html' && currentPage !== '' && currentPage !== '/') {
             const nav = document.getElementById('navbar');
             const returnHome = document.createElement('a');
             returnHome.href = 'work.html';
             returnHome.textContent = '返回首頁';
-            nav.appendChild(returnHome); // 加到導覽列最後一個
+            nav.appendChild(returnHome); 
         }
     </script>
     <div>5B3G0019李宇軒 這是我的期末報告</div>
